@@ -1,2 +1,0 @@
-# myfinances
-My Finances

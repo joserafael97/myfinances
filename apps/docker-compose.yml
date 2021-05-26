@@ -1,0 +1,62 @@
+version: '3'
+services:
+  postgres:
+    container_name: postgres
+    image: postgres:9.6.16
+    ports:
+      - 5441:5432
+    environment:
+      - POSTGRES_PASSWORD=secret
+      - POSTGRES_USER=pguser
+      - POSTGRES_DB=myfinances
+    expose:
+      - 5441
+    networks:
+      - production-network
+  myfinances-api:
+    container_name: myfinances-api
+    build:
+      dockerfile: ./Dockerfile
+      context: ./myfinances
+    image: myfinances-api
+    ports:
+      - "8080:8080"
+    expose:
+      - 8080
+    networks:
+      - production-network
+    depends_on:
+      - postgres
+      - myfinances-api-monitor
+  myfinances-api-monitor:
+    container_name: myfinances-api-monitor
+    build:
+      dockerfile: ./Dockerfile
+      context: ./myfinances.monitor
+    image: myfinances-api-monitor
+    ports:
+      - "8081:8081"
+    expose:
+      - 8081
+    networks:
+      - production-network
+    depends_on:
+      - postgres
+  myfinances-ui:
+    container_name: myfinances-ui
+    build:
+      dockerfile: ./Dockerfile
+      context: ./myfinances-ui
+    image: myfinances-ui
+    ports:
+      - "80:80"
+    expose:
+      - 80
+    networks:
+      - production-network
+    depends_on:
+      - myfinances-api
+
+networks:
+  production-network:
+    driver: bridge
