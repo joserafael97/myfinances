@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<libraryInfos>
+<libraryInfo home="C:\jdk_zulu\zulu11.48.21-ca-jdk11.0.11-win_x64" version="11.0.11"/>
+<libraryInfo home="C:\jdk_zulu\zulu8.46.0.19-ca-fx-jdk8.0.252-win_x64" version="1.8.0_252">
+<bootpath>
+<entry path="C:\jdk_zulu\zulu8.46.0.19-ca-fx-jdk8.0.252-win_x64\jre\lib\resources.jar"/>
+<entry path="C:\jdk_zulu\zulu8.46.0.19-ca-fx-jdk8.0.252-win_x64\jre\lib\rt.jar"/>
+<entry path="C:\jdk_zulu\zulu8.46.0.19-ca-fx-jdk8.0.252-win_x64\jre\lib\sunrsasign.jar"/>
+<entry path="C:\jdk_zulu\zulu8.46.0.19-ca-fx-jdk8.0.252-win_x64\jre\lib\jsse.jar"/>
+<entry path="C:\jdk_zulu\zulu8.46.0.19-ca-fx-jdk8.0.252-win_x64\jre\lib\jce.jar"/>
+<entry path="C:\jdk_zulu\zulu8.46.0.19-ca-fx-jdk8.0.252-win_x64\jre\lib\charsets.jar"/>
+<entry path="C:\jdk_zulu\zulu8.46.0.19-ca-fx-jdk8.0.252-win_x64\jre\lib\jfr.jar"/>
+<entry path="C:\jdk_zulu\zulu8.46.0.19-ca-fx-jdk8.0.252-win_x64\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\jdk_zulu\zulu8.46.0.19-ca-fx-jdk8.0.252-win_x64\jre\lib\ext"/>
+<entry path="C:\WINDOWS\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\jdk_zulu\zulu8.46.0.19-ca-fx-jdk8.0.252-win_x64\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="C:\jdk_zulu\zulu8.46.0.19-ca-fx-jdk8.0.252-win_x64\jre" version="1.8.0_252">
+<bootpath>
+<entry path="C:\jdk_zulu\zulu8.46.0.19-ca-fx-jdk8.0.252-win_x64\jre\lib\resources.jar"/>
+<entry path="C:\jdk_zulu\zulu8.46.0.19-ca-fx-jdk8.0.252-win_x64\jre\lib\rt.jar"/>
+<entry path="C:\jdk_zulu\zulu8.46.0.19-ca-fx-jdk8.0.252-win_x64\jre\lib\sunrsasign.jar"/>
+<entry path="C:\jdk_zulu\zulu8.46.0.19-ca-fx-jdk8.0.252-win_x64\jre\lib\jsse.jar"/>
+<entry path="C:\jdk_zulu\zulu8.46.0.19-ca-fx-jdk8.0.252-win_x64\jre\lib\jce.jar"/>
+<entry path="C:\jdk_zulu\zulu8.46.0.19-ca-fx-jdk8.0.252-win_x64\jre\lib\charsets.jar"/>
+<entry path="C:\jdk_zulu\zulu8.46.0.19-ca-fx-jdk8.0.252-win_x64\jre\lib\jfr.jar"/>
+<entry path="C:\jdk_zulu\zulu8.46.0.19-ca-fx-jdk8.0.252-win_x64\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\jdk_zulu\zulu8.46.0.19-ca-fx-jdk8.0.252-win_x64\jre\lib\ext"/>
+<entry path="C:\WINDOWS\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\jdk_zulu\zulu8.46.0.19-ca-fx-jdk8.0.252-win_x64\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+</libraryInfos>
