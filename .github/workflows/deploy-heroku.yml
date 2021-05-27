@@ -1,4 +1,4 @@
-name: myfinances-build-production
+name: deploy-heroku
 
 on:
   workflow_dispatch:
