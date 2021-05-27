@@ -3,7 +3,7 @@ name: deploy-heroku
 on:
   workflow_dispatch:
 jobs:
-  deploy-api-heroku:
+  deploy-myfinances-api:
     runs-on: ubuntu-latest
     steps:
     - name: Git Checkout
@@ -29,3 +29,36 @@ jobs:
       env:
        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
       run: heroku container:release -a ${{ secrets.HEROKU_APP_NAME }} web 
+ 
+  deploy-myfinances-ui:
+      runs-on: ubuntu-latest
+      strategy:
+        matrix:
+          node-version: [14.x]
+      steps:
+        - uses: actions/checkout@v1
+        - name: Cache node modules
+          uses: actions/cache@v1
+          with:
+            path: ~/.npm
+            key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+            restore-keys: |
+              ${{ runner.os }}-node-
+        - name: Node ${{ matrix.node-version }}
+          uses: actions/setup-node@v1
+          with:
+            node-version: ${{ matrix.node-version }}
+        - name: Login to Heroku Container registry
+          env: 
+            HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+          run: heroku container:login 
+        - name: Build and push
+          working-directory: ./apps/myfinances-ui/
+          env:
+            HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+          run: heroku container:push -a ${{ secrets.HEROKU_APP_NAME }} web 
+        - name: Release
+          working-directory: ./apps/myfinances-ui/
+          env:
+            HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+          run: heroku container:release -a ${{ secrets.HEROKU_APP_NAME }} web 
