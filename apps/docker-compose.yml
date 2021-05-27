@@ -16,6 +16,10 @@ services:
   myfinances-api:
     container_name: myfinances-api
     build:
+      args:
+        - PORT=8080
+        - SPRING_PROFILES_ACTIVE=prod
+        - MEMORY_USE=-Xmx512m
       dockerfile: ./Dockerfile
       context: ./myfinances
     image: myfinances-api
@@ -31,6 +35,10 @@ services:
   myfinances-api-monitor:
     container_name: myfinances-api-monitor
     build:
+      args:
+        - PORT=8081
+        - SPRING_PROFILES_ACTIVE=default
+        - MEMORY_USE=-Xmx512m
       dockerfile: ./Dockerfile
       context: ./myfinances.monitor
     image: myfinances-api-monitor
@@ -50,6 +58,8 @@ services:
     image: myfinances-ui
     ports:
       - "80:80"
+    environment:
+      - PORT=80
     expose:
       - 80
     networks:
