@@ -14,7 +14,7 @@ jobs:
         java-version: 11
     - name: Build with Maven
       working-directory: ./apps/myfinances/
-      run: mvn -B package --file pom.xml
+      run: mvn -B package --file -Dmaven.test.skip=true pom.xml
     - name: Heroku Container Registry login
       env: 
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
