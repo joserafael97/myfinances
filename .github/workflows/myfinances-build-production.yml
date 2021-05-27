@@ -3,7 +3,7 @@ name: myfinances-build-production
 on:
   workflow_dispatch:
 jobs:
-   run_tests:
+  run_tests:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repository
@@ -14,5 +14,9 @@ jobs:
           java-version: 14
       - name: Cache Maven packages
         uses: actions/cache@v2
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
       - name: Run tests with Maven
-        run: pwd && cd ../../ 
+        run: cd ../../ && mvn -B test --file pom.xml
