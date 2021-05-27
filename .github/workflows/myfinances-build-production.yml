@@ -15,5 +15,4 @@ jobs:
       - name: Cache Maven packages
         uses: actions/cache@v2
       - name: Run tests with Maven
-        working-directory: ./apps/myfinances/
         run: mvn -B test -f pom.xml
