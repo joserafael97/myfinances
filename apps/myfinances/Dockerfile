@@ -4,5 +4,5 @@ USER spring:spring
 ARG JAR_FILE=target/myfinances-api.jar
 COPY ${JAR_FILE} app.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-Dspring.profiles.active=default", "-jar","/app.jar"]
+ENTRYPOINT ["java", "-Xmx512m", "-Dspring.profiles.active=default", "-jar","/app.jar"]
 
