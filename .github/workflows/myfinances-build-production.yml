@@ -20,4 +20,4 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Run tests with Maven
         working-directory: ./apps/myfinances/
-        run: mvn -B test --file pom.xml
+        run: mvn -B test -f pom.xml
