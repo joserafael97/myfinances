@@ -44,7 +44,6 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter{
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 		.authorizeRequests()
-		.antMatchers("/h2-console/**").permitAll()
 		.antMatchers(HttpMethod.GET, "/expenses").permitAll()
 		.antMatchers(HttpMethod.GET, "/expenses/*").permitAll()
 		.antMatchers(HttpMethod.DELETE, "/expenses/*").hasRole("ADMIN")
