@@ -5,7 +5,7 @@ server {
       include  /etc/nginx/mime.types;
       root   /usr/share/nginx/html/;
       index  index.html index.htm;
-      try_files $uri $uri/ =404;
+      try_files $uri $uri/ /index.html /api/ /custom_404.html /50x.html =404;
       proxy_redirect     off;
       proxy_set_header   X-Real-IP $remote_addr;
       proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -19,9 +19,17 @@ server {
       proxy_pass ${NGINX_HOST};
 	}
 
-  location /api/* {
-      proxy_set_header X-Forwarded-Host $host;
-      proxy_set_header X-Forwarded-Server $host;
-      proxy_pass ${NGINX_HOST};
+  error_page   500 502 503 504  /50x.html;
+  location = /50x.html {
+      root   /usr/share/nginx/html;
+      internal;
   }
+
+  error_page 404 /custom_404.html;
+  location = /custom_404.html {
+    root /usr/share/nginx/html;
+    internal;
+  }
+
+  
 }
