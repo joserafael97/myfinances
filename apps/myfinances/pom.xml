@@ -3,20 +3,34 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+
 	<parent>
 		<groupId>com.openjr</groupId>
 		<artifactId>myfinances</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
+
 	<groupId>com.openjr</groupId>
-	<artifactId>myfinances-api</artifactId>
+	<artifactId>myfinances.api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>myfinances-api</name>
 	<description>Project to manager my finances lives</description>
+
 	<properties>
 		<java.version>11</java.version>
 	</properties>
+
 	<dependencies>
+		<dependency>
+			<groupId>om.openjr</groupId>
+			<artifactId>auth</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>om.openjr</groupId>
+			<artifactId>common</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>

@@ -18,6 +18,8 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>../libs/java/common</module>
+        <module>../libs/java/auth</module>
         <module>myfinances</module>
         <module>myfinances.monitor</module>
     </modules>
