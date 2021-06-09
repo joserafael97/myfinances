@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import com.openjr.myfinances.model.Profile;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -34,9 +35,9 @@ public class User implements UserDetails{
 	private String email;
 	private String password;
 	private boolean status = true;
+
 	@ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 	private List<Profile> profiles = new ArrayList<>();
-
 	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {

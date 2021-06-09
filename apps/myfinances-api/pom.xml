@@ -22,17 +22,12 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>br.edu.ufcg.virtus</groupId>
-			<artifactId>auth-utils</artifactId>
+			<groupId>com.openjr</groupId>
+			<artifactId>auth</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>br.edu.ufcg.virtus</groupId>
-			<artifactId>testrec-client</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>br.edu.ufcg.virtus</groupId>
+			<groupId>com.openjr</groupId>
 			<artifactId>common</artifactId>
 			<version>${project.version}</version>
 		</dependency>
@@ -83,6 +78,11 @@
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt</artifactId>
+			<version>0.9.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.security</groupId>
